@@ -1,73 +1,87 @@
-# React + TypeScript + Vite
+# 🚀 FormWise — Intelligent Form Automation Extension
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+FormWise is a high-performance, context-aware Chrome Extension built using **React 18**, **Vite**, and **Faker.js**.  
+It streamlines development and QA workflows by instantly populating complex web forms with realistic data, eliminating the limitations of basic “lorem ipsum” generators.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Tech Stack
 
-## React Compiler
+### Core Framework
+- **React 18** — Powers a reactive and modular popup UI  
+- **Vite** — Optimized build tool producing a clean, lightweight extension bundle  
+- **TypeScript 5** — Strict type safety across UI, content scripts, and background logic  
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🧩 Main Dependencies
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### UI & Styling
+- **Tailwind CSS 4** — Utility-first styling for a modern extension interface  
+- **Lucide React** — Minimalist icon set for improved UX  
+- **Radix UI** — Accessible, unstyled UI primitives  
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Data Generation
+- **Faker.js v9** — Generates realistic names, emails, phone numbers, addresses, and more  
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Chrome Integration
+- **Chrome Extension API (Manifest V3)** — Secure and performant extension architecture  
+- **@types/chrome** — Full TypeScript support for Chrome APIs  
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+## ⚙️ Development Tools
+- **ESLint 9** — Enforces clean, strict TypeScript (no `any` usage)  
+- **PostCSS** — Advanced CSS processing for Tailwind  
+- **Rollup** — Handles multiple entry points (Popup, Content, Background)  
+
+---
+
+## 🧠 Scripts
+
+| Command | Description |
+|------|------------|
+| `npm run dev` | Run Vite in watch mode |
+| `npm run build` | Build the optimized `dist` folder |
+| `npm run lint` | Run TypeScript and ESLint checks |
+| `npm run preview` | Preview built assets |
+
+---
+
+## 🛠️ Features & Implementation
+
+### Smart Context Detection
+FormWise analyzes `id`, `name`, and `placeholder` attributes to automatically detect the expected input type (email, name, phone number, address, etc.) and fills it with realistic data.
+
+### Framework Compatibility
+To support modern frameworks such as **React**, **Vue**, and **Angular**, FormWise manually dispatches DOM events so that internal state managers remain in sync:
+
+```ts
+element.dispatchEvent(new Event('input', { bubbles: true }));
+element.dispatchEvent(new Event('change', { bubbles: true }));
+This ensures values are correctly registered by controlled components and form libraries.
+
+## 📦 Setup & Installation
+Clone the Repository
+```
+git clone https://github.com/your-username/formwise.git
+cd formwise
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Install Dependencies
 ```
+npm install
+```
+## Build the Extension
+```
+npm run build
+```
+## 🧩 Load the Extension into Chrome
+
+Open Chrome and navigate to chrome://extensions/
+
+Enable Developer Mode (top-right)
+
+Click Load unpacked
+
+Select the generated dist folder
