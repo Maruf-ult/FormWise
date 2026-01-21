@@ -63,10 +63,12 @@ This ensures values are correctly registered by controlled components and form l
 ```
 
 ### ⚙️Installation  
- 1. **Clone the repository**  
+ 
+ 1. Clone the repository  
    ```bash
   git clone https://github.com/Maruf-ult/formwise.git
   cd formwise
+    ```
 
 2. Install Dependencies
 
