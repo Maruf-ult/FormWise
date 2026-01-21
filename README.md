@@ -72,21 +72,23 @@ This ensures values are correctly registered by controlled components and form l
 
    ```
     npm install
-    ```
+   
+   ```
 
 3. Build the Extension
 
    ```
    npm run build
 
-    ```
+   ```
 
 4. Install frontend dependencies:
    
    ```
    cd frontend
    npm install
-     ```
+   
+   ```
 ### Load the Extension into Chrome
  1. Open Chrome and navigate to chrome://extensions/
  2. Enable Developer Mode (toggle in the top-right corner).
