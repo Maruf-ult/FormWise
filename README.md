@@ -62,21 +62,27 @@ element.dispatchEvent(new Event('change', { bubbles: true }));
 This ensures values are correctly registered by controlled components and form libraries.
 
 ## 📦 Setup & Installation
+
 Clone the Repository
+
 ```
-git clone https://github.com/your-username/formwise.git
-cd formwise
+  git clone https://github.com/your-username/formwise.git
+  cd formwise
 ```
 
-## Install Dependencies
+### Install Dependencies
+
 ```
-npm install
+   npm install
 ```
-## Build the Extension
+
+### Build the Extension
+
 ```
-npm run build
+  npm run build
 ```
-## 🧩 Load the Extension into Chrome
+
+### 🧩 Load the Extension into Chrome
 
 Open Chrome and navigate to chrome://extensions/
 
