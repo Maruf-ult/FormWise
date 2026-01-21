@@ -72,17 +72,20 @@ This ensures values are correctly registered by controlled components and form l
 
    ```bash
       npm install
+   ```
 
 3. Build the Extension
 
    ```bash
      npm run build
+   ```
 
 4. Install frontend dependencies:
    
    ```bash
    cd frontend
    npm install
+   ```
 
 ### Load the Extension into Chrome
  1. Open Chrome and navigate to chrome://extensions/
