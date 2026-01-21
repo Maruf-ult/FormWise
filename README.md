@@ -65,30 +65,25 @@ This ensures values are correctly registered by controlled components and form l
 ### ⚙️Installation  
  1. **Clone the repository**  
    ```bash
-  git clone https://github.com/your-username/formwise.git
+  git clone https://github.com/Maruf-ult/formwise.git
   cd formwise
 
 2. Install Dependencies
 
-   ```
-    npm install
-   
-   ```
+   ```bash
+      npm install
 
 3. Build the Extension
 
-   ```
-   npm run build
-
-   ```
+   ```bash
+     npm run build
 
 4. Install frontend dependencies:
    
-   ```
+   ```bash
    cd frontend
    npm install
-   
-   ```
+
 ### Load the Extension into Chrome
  1. Open Chrome and navigate to chrome://extensions/
  2. Enable Developer Mode (toggle in the top-right corner).
