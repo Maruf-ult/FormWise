@@ -60,34 +60,38 @@ To support modern frameworks such as **React**, **Vue**, and **Angular**, FormWi
 element.dispatchEvent(new Event('input', { bubbles: true }));
 element.dispatchEvent(new Event('change', { bubbles: true }));
 This ensures values are correctly registered by controlled components and form libraries.
-
-## 📦 Setup & Installation
-
-Clone the Repository
-
 ```
+
+### ⚙️Installation  
+ 1. **Clone the repository**  
+   ```bash
   git clone https://github.com/your-username/formwise.git
   cd formwise
-```
 
-### Install Dependencies
+2. Install Dependencies
 
-```
+   ```
+    npm install
+    ```
+
+3. Build the Extension
+
+   ```
+   npm run build
+
+    ```
+
+4. Install frontend dependencies:
+   
+   ```
+   cd frontend
    npm install
-```
+     ```
+### Load the Extension into Chrome
+ 1. Open Chrome and navigate to chrome://extensions/
+ 2. Enable Developer Mode (toggle in the top-right corner).
+ 3. Click Load unpacked.
+ 4. Select the generated dist folder in your project directory.
 
-### Build the Extension
+  
 
-```
-  npm run build
-```
-
-### 🧩 Load the Extension into Chrome
-
-Open Chrome and navigate to chrome://extensions/
-
-Enable Developer Mode (top-right)
-
-Click Load unpacked
-
-Select the generated dist folder
